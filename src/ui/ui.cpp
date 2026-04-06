@@ -545,7 +545,7 @@ static bool PlayAIMove()
         move = agent_instances[1].descriptor->get_next_move(agent_instances[1].state, game, StopRequested);
 
     // Ensure AI move is played for at least 1.5 seconds to give the user time to see the AI's move
-    while ((GetTime() - start_time) < 1.25)
+    while (!stop_requested && (GetTime() - start_time) < 1.25)
         UpdateUIFrame();
 
     if (PlayMove(game, move))
