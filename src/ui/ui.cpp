@@ -535,13 +535,18 @@ static bool StopRequested()
  */
 static bool PlayAIMove()
 {
-    GamePhase phase = GetGamePhase(game);
+    double start_time = GetTime();
 
+    GamePhase phase = GetGamePhase(game);
     GamePosition move = {-1, -1};
     if (phase == GAME_BLACK_PLAYS)
         move = agent_instances[0].descriptor->get_next_move(agent_instances[0].state, game, StopRequested);
     else if (phase == GAME_WHITE_PLAYS)
         move = agent_instances[1].descriptor->get_next_move(agent_instances[1].state, game, StopRequested);
+
+    // Ensure AI move is played for at least 1.5 seconds to give the user time to see the AI's move
+    while ((GetTime() - start_time) < 1.25)
+        UpdateUIFrame();
 
     if (PlayMove(game, move))
     {
@@ -573,14 +578,7 @@ bool UpdateUI()
             stop_requested = false;
 
             agent_running = true;
-
-            double ai_start_time = GetTime();
             PlayAIMove();
-
-            // Ensure AI move is played for at least 1.5 seconds to give the user time to see the AI's move
-            while ((GetTime() - ai_start_time) < 1.25)
-                UpdateUIFrame();
-
             agent_running = false;
         }
     }
