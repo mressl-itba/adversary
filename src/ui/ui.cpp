@@ -472,7 +472,7 @@ static void UpdateGameUI()
     }
 
     // Stop request
-    if (IsKeyDown(KEY_ESCAPE))
+    if (IsKeyPressed(KEY_ESCAPE))
         stop_requested = true;
 }
 
