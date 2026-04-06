@@ -6,7 +6,7 @@
  * @author The dark net programmers
  */
 
-// IMPORTANT!!! RENAME THIS FOLDER, FILES AND STRUCTURE TO SUIT YOUR PROJECT
+// IMPORTANT: RENAME THIS FOLDER, FILES AND STRUCTURE TO SUIT YOUR PROJECT
 
 #include "starter_agent.h"
 

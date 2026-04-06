@@ -1,11 +1,12 @@
 /**
  * The Adversary
  * Greedy AI agent
-    const auto wait_start = std::chrono::steady_clock::now();
-    while (std::chrono::duration_cast<std::chrono::milliseconds>(
-               std::chrono::steady_clock::now() - wait_start)
-               .count() < 1250)
+ * 
+ * @details This module implements a simple greedy AI agent for Reversi.
+ * @author The dark net programmers 
  */
+
+ // IMPORTANT: RENAME THIS FOLDER, FILES AND STRUCTURE TO SUIT YOUR PROJECT
 
 #include <chrono>
 #include <thread>

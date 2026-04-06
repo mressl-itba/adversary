@@ -6,6 +6,8 @@
  * @author The dark net programmers
  */
 
+ // IMPORTANT: RENAME THIS FOLDER, FILES AND STRUCTURE TO SUIT YOUR PROJECT
+
 #ifndef GREEDY_H_
 #define GREEDY_H_
 
