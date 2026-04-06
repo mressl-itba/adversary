@@ -56,6 +56,9 @@ void UnloadGreedyAgent(void *userdata)
  */
 GamePosition GetGreedyAgentNextMove(void *userdata, Game &game, StopRequestedCallback stopRequested)
 {
+    // Cast the userdata pointer to your agent's state structure so you can access any state variables you have maintained.
+    GreedyAgentState *agentState = (GreedyAgentState *)userdata;
+
     // Get all valid moves for the current player
     GameMoves moves;
     GetValidMoves(game, moves);

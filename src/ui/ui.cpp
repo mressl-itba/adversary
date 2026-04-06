@@ -573,7 +573,14 @@ bool UpdateUI()
             stop_requested = false;
 
             agent_running = true;
+
+            double ai_start_time = GetTime();
             PlayAIMove();
+
+            // Ensure AI move is played for at least 1.5 seconds to give the user time to see the AI's move
+            while ((GetTime() - ai_start_time) < 1.25)
+                UpdateUIFrame();
+
             agent_running = false;
         }
     }
